@@ -8,4 +8,17 @@ package Algorithm.AlgorithmBook.LinkedList;
  */
 public class RemoveDuplicatesItemFromLinkedList {
 
+    /**
+     * Á´±í½áµã
+     */
+    static class ListNode{
+        int data;
+        ListNode next;
+    }
+
+
+
+    public static void main(String[] args) {
+
+    }
 }

@@ -13,20 +13,20 @@ public class ReverseSingleLinkedList_1 {
     /**
      * LinkedList Node
      */
-    static class LNode
+    static class ListNode
     {
         int data;
-        LNode next;
+        ListNode next;
     }
 
-    public static void ReverseList(LNode head){
+    public static void ReverseList(ListNode head){
         if (head == null || head.next == null){
             return ;
         }
         //定义前驱、当前以及后继节点
-        LNode preNode = null;
-        LNode curNode = null;
-        LNode nextNode = null;
+        ListNode preNode = null;
+        ListNode curNode = null;
+        ListNode nextNode = null;
 
         //将链表的首节点当作尾节点
         curNode = head.next;
@@ -54,13 +54,13 @@ public class ReverseSingleLinkedList_1 {
 
     public static void main(String[] args)
     {
-        LNode head = new LNode();
+        ListNode head = new ListNode();
         head.next = null;
-        LNode tempNode = null;
-        LNode curNode = head;
+        ListNode tempNode = null;
+        ListNode curNode = head;
         //构造单链表
         for (int i = 0; i < 8; i++) {
-            tempNode = new LNode();
+            tempNode = new ListNode();
             tempNode.data = i;
             tempNode.next = null;
             curNode.next = tempNode;

@@ -11,9 +11,9 @@ public class ReverseSingleLinkedList_2 {
     /**
      * 链表的结点
      */
-    static class LNode {
+    static class ListNode {
         int data;
-        LNode next;
+        ListNode next;
     }
 
     /**
@@ -21,12 +21,12 @@ public class ReverseSingleLinkedList_2 {
      * @param head
      * @return
      */
-    public static LNode RecursiveReverse(LNode head){
+    public static ListNode RecursiveReverse(ListNode head){
         if (head == null || head.next == null){
             return head;
         }else {
             //反转后面的结点
-            LNode newhead = RecursiveReverse(head.next);
+            ListNode newhead = RecursiveReverse(head.next);
             head.next.next = head;
             head.next = null;
             return newhead;
@@ -37,12 +37,12 @@ public class ReverseSingleLinkedList_2 {
      * 对带头结点的单链表进行逆序
      * @param head
      */
-    public static void Reverse(LNode head){
+    public static void Reverse(ListNode head){
         if (head == null){
             return;
         }
-        LNode firstNode = head.next;
-        LNode newhead = RecursiveReverse(firstNode);
+        ListNode firstNode = head.next;
+        ListNode newhead = RecursiveReverse(firstNode);
         head.next = newhead;
     }
 
@@ -50,12 +50,12 @@ public class ReverseSingleLinkedList_2 {
      * 利用插入法，实现单链表的逆序
      *      从链表的第二个节点开始，将遍历到的结点插入到头节点的尾部，直到遍历结束
      */
-    public static void InsertReverse(LNode head){
+    public static void InsertReverse(ListNode head){
         if (head == null || head.next == null){
             return ;
         }
-        LNode curNode = null;
-        LNode nextNode = null;
+        ListNode curNode = null;
+        ListNode nextNode = null;
         //链表的第二个结点为当前结点
         curNode = head.next.next;
         //设置链表的第一个结点为最终结果的尾节点
@@ -70,13 +70,13 @@ public class ReverseSingleLinkedList_2 {
 
 
     public static void main(String[] args) {
-        LNode head = new LNode();
+        ListNode head = new ListNode();
         head.next = null;
-        LNode tempNode = null;
-        LNode curNode = head;
+        ListNode tempNode = null;
+        ListNode curNode = head;
         //构造单链表
         for (int i = 0; i < 8; i++) {
-            tempNode = new LNode();
+            tempNode = new ListNode();
             tempNode.data = i;
             tempNode.next = null;
             curNode.next = tempNode;
